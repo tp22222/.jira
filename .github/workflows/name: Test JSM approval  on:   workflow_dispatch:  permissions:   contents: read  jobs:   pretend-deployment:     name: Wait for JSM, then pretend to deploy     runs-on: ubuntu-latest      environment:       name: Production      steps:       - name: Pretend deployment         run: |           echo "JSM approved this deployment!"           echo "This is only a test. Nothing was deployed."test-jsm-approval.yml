@@ -1,0 +1,21 @@
+name: Test JSM approval
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pretend-deployment:
+    name: Wait for JSM, then pretend to deploy
+    runs-on: ubuntu-latest
+
+    environment:
+      name: Production
+
+    steps:
+      - name: Pretend deployment
+        run: |
+          echo "JSM approved this deployment!"
+          echo "This is only a test. Nothing was deployed."
